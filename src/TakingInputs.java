@@ -6,6 +6,8 @@ public class TakingInputs {
 		// TODO Auto-generated method stub
 
 		Scanner s = new Scanner(System.in);
+		int num = 0;
+		
 		
 	}
 
