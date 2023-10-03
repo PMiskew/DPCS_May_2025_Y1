@@ -10,11 +10,7 @@
  */
 public class $PM {
 	
-	
-	
-	
-	
-	
+
 	/**
 	 * String A - One Pager #3
 	 * @param s
@@ -37,7 +33,39 @@ public class $PM {
 	}// end pullN
 	
 	
-	
+	/**
+	 * String A - One Pager #5
+	 * @param s
+	 * @return
+	 */
+	public static String findMiddle(String s) {
+		
+		//BIG SKILL: Check if a number is ever or odd
+		int len = s.length();
+		
+		if (len < 3) {
+			return "";
+		}
+		
+		//MOD gives the remainder when we divide two numbers
+		//If we mod a number by 2 odd numbers get 1 even numbers get 0
+		if (len % 2 == 0) {
+			// 012345
+			// Hello!
+			//len/2 -1 + 2 - (len/2 - 1) = len/2 - 1 + 2 - len/2 + 1 = 2
+			return s.substring(len/2 - 1, len/2 +1);
+			
+		}
+		
+		// 01234
+		// Hello
+		//INTEGER DIVISION: 
+		return s.substring(len/2,len/2 + 1);
+		
+		
+		
+		
+	}
 	
 	
 	/**
