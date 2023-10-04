@@ -8,7 +8,7 @@ public class $PM_Runner {
 		//With your first assignment I will be checking test cases
 		//Testing is a very important aspect of computer science. 
 		
-		System.out.printf("%+3d",674);
+		System.out.printf("%+3d",s674);
 		//************************Test findMiddle**********************
 		System.out.println("Test findMiddle");
 		
