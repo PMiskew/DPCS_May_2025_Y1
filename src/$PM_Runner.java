@@ -5,11 +5,29 @@ public class $PM_Runner {
 	
 		
 		
+		//************************Test findMiddle**********************
+		
+		int[] nums1 = {-1,-2,-3};
+		int[] nums2 = {};
+		int[] nums3 = {99,21,-9,6};
+		
+		
+		int result1 = $PM.findMax(nums1);  //expect 3
+		int result2 = $PM.findMax(nums2);  //expect 0
+		int result3 = $PM.findMax(nums3);  //99
+		
+		
+		System.out.println(result1);
+		System.out.println(result2);
+		System.out.println(result3);
+		
+		
 		//With your first assignment I will be checking test cases
 		//Testing is a very important aspect of computer science. 
 		
-		System.out.printf("%+3d",s674);
+	
 		//************************Test findMiddle**********************
+		/*
 		System.out.println("Test findMiddle");
 		
 		String findMiddle_T1 = $PM.findMiddle("Paul");
@@ -21,7 +39,7 @@ public class $PM_Runner {
 		String findMiddle_T3 = $PM.findMiddle("");
 		System.out.println(findMiddle_T3);
 		
-		
+		//*/
 		//************************Test pullN**********************
 		
 		/*

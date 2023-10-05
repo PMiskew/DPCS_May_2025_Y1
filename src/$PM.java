@@ -10,6 +10,36 @@
  */
 public class $PM {
 	
+	
+	/**
+	 * This method returns the max value in a list of integers
+	 * @param a
+	 * @return
+	 * 
+	 * 
+	 * 
+	 */
+	public static int findMax(int[] a) {
+		
+		if (a.length == 0) {
+			return null;
+		}
+		
+		int max = a[0];
+			
+		for (int i = 0; i < a.length; i = i + 1) {
+			
+			if (a[i] > max) {
+				max = a[i];
+			}
+			
+		}
+		
+		return max;
+		
+		
+		
+	}
 
 	/**
 	 * String A - One Pager #3
