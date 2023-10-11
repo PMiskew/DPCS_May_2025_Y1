@@ -16,14 +16,11 @@ public class $PM {
 	 * @param a
 	 * @return
 	 * 
-	 * 
+	 * precondition: a.length > 0
 	 * 
 	 */
 	public static int findMax(int[] a) {
 		
-		if (a.length == 0) {
-			return null;
-		}
 		
 		int max = a[0];
 			
@@ -37,10 +34,56 @@ public class $PM {
 		
 		return max;
 		
-		
-		
-	}
+	}//end findMax
 
+	/**
+	 * This method returns the max value in a list of integers
+	 * @param a
+	 * @return
+	 * 
+	 * precondition: a.length > 0
+	 * 
+	 */
+	public static String findMax(String[] a) {
+		
+		
+		int max = a[0];
+			
+		for (int i = 0; i < a.length; i = i + 1) {
+			
+			if (a[i] > max) {
+				max = a[i];
+			}
+			
+		}
+		
+		return max;
+		
+	}//end findMax
+	/**
+	 * This method finds the min of an array of ints
+	 * @param a
+	 * @return
+	 * 
+	 * precondition: a.length >0
+	 */
+	public static int findMin(int[] a) {
+		
+		
+		int min = a[0];
+			
+		for (int i = 0; i < a.length; i = i + 1) {
+			
+			if (a[i] < min) {
+				min = a[i];
+			}
+			
+		}
+		
+		return mix;
+		
+	}//end findMax
+	
 	/**
 	 * String A - One Pager #3
 	 * @param s
