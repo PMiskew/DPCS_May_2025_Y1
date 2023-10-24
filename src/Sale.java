@@ -49,7 +49,7 @@ public class Sale extends JFrame    {
         
         //Because Sale extends JFrame there are all sorts of methods I can 
         //use to modify the window
-        setTitle("Sale Window");  //sets teh title
+        setTitle("Sale Window");  //sets the title
         setSize(1000, 500);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
