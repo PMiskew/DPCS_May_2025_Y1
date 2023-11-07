@@ -4,7 +4,7 @@ public class $PM_Runner {
 	public static void main(String[] args) {
 	
 		
-		
+		/*
 		//************************Test findMax**********************
 		//************************Test findMin**********************
 		
@@ -21,7 +21,7 @@ public class $PM_Runner {
 		System.out.println(result1);
 		System.out.println(result2);
 		System.out.println(result3);
-		
+	*/
 		
 		//With your first assignment I will be checking test cases
 		//Testing is a very important aspect of computer science. 
@@ -63,6 +63,8 @@ public class $PM_Runner {
 		System.out.println(pull_T5); //expect ""
 		
 		//*/
+
+		System.out.println("cat".indexOf('b'));
 		
 		
 	}

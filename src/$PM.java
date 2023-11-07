@@ -47,11 +47,11 @@ public class $PM {
 	public static String findMax(String[] a) {
 		
 		
-		int max = a[0];
+		int max = a[0].length;
 			
 		for (int i = 0; i < a.length; i = i + 1) {
 			
-			if (a[i] > max) {
+			if (a[i].length() > max) {
 				max = a[i];
 			}
 			
