@@ -146,7 +146,7 @@ public class SecretCode {
 		String temp2 = "";
 		int l2 = words[1].length();
 		
-		temp2 = ""+ words[1].charAt(l2-1); // temp2 = "e"
+		temp2 = "" + words[1].charAt(l2-1); // temp2 = "e"
 		
 		for (int i = 1; i < words[1].length() - 1; i = i + 1) {
 			
@@ -218,7 +218,16 @@ public class SecretCode {
 		System.out.println(temp4);
 		
 		System.out.println("*****************************E5*****************************");
-		
+		/*
+		 * 
+		 * length = 9, index = 0 to 8
+		 * Beginning 
+		 * 
+		 * Shifting every letter right 2 
+		 * 
+		 * temp5 = ngBeginni
+		 * 
+		 */
 		
 		String temp5 = "";
 		int l5 = words[4].length();
