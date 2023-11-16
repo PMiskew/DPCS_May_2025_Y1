@@ -53,10 +53,17 @@ public class ToolDemo1 {
 		
 		int sum = 0;
 		
+		/*
 		if (num < 0) {
 			num = num * -1;
 			
 		}
+		*/
+		
+		//num = Math.abs(num);
+		
+		num = (int)Math.sqrt(num * num);
+		
 		while (num > 0) {
 			
 			int temp = num % 10;
@@ -66,5 +73,29 @@ public class ToolDemo1 {
 		}
 		return sum;
 	}
+	
+	
+	public static int addDigitsB(int num) {
+		
+		String snum = "" + num;  
+		int sum = 0;
+		
+		for (int i =0 ; i < snum.length(); i = i + 1) {
+			
+			int temp = Integer.parseInt("" + snum.charAt(i));
+			sum = sum + temp;
+		}
+		return sum;
+	}
+	
+	public static int addDigitsC(int num) {
+		
+		//Step 1: Covert the number into an array where each element is a digit
+		//Step 2: They add all the elements in the array;
+		//Step 3: They return the sum
+		
+	}
+	
+	
 
 }
