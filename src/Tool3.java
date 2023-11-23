@@ -39,7 +39,7 @@ public class Tool3 {
 				return hex[i];
 			}
 		}
-		return -1;
+		return '*';
 	}
 	
 	public static String base2ToHex(int a) {
@@ -47,6 +47,24 @@ public class Tool3 {
 		char a = getHexDigit(""+a);
 	}
 	
+	public static int base10toBase2(int a) {
+		
+		return 0;
+		
+	}
 	
+	/**
+	 * This method takes a base 10 number adn convert it to base N.
+	 * 
+	 * Precondition - 2 <= n <= 10
+	 * @param a
+	 * @param n
+	 * @return
+	 */
+	public static int base10toBaseN(int a, int n) {
+		
+		return 0;
+		
+	}
 
 }
