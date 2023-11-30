@@ -83,7 +83,7 @@ public class Tool5 {
 		
 	}
 	
-	public static ArrayList<Integer> mB(int a) {
+	public static ArrayList<Integer> findFactors(int a) {
 		
 		return null;
 	}
