@@ -16,25 +16,32 @@ public class Display {
 		public void paintComponent(Graphics g) {
 			
 			System.out.println(map[0][0]);
-			int x = 0;
-			int y = 0;
+			int x = 10;
+			int y = 10;
 			int ctr = 0; 
 			
-			for (int r = 0; r < 10; r = r +  1) {
-				for (int c = 0; c < 10; c = c + 1) {
+			for (int r = 0; r < 50; r = r +  1) {
+				for (int c = 0; c < 50; c = c + 1) {
 					
-					Color[] colors = {Color.CYAN,Color.GREEN,Color.BLUE,Color.GRAY,Color.YELLOW};
+					// 0 is water
+				    // 1 is sand
+				    // 2 is grassland
+				    // 3 is forest
+				    // 4 is hills
+				    // 5 is mountains
+				    // 6 is dunes
+					Color[] colors = {Color.BLUE,new Color(194,178,128),new Color(124,252,0),Color.GREEN,Color.LIGHT_GRAY, Color.GRAY, new Color(200,173,127)};
 					
 					g.setColor(colors[map[r][c]]);
 					
-					g.fillRect(x, y, 50, 50);	
-					x = x + 50;
-					ctr = ctr + 1;
+					g.fillRect(x, y, 10, 10);	
+					x = x + 10;
+				
 					
 				}
-				ctr = ctr + 1;
-				x = 0;
-				y = y + 50;
+		
+				x = 10;
+				y = y + 10;
 			}
 			g.setColor(Color.BLACK);
 			
@@ -43,7 +50,7 @@ public class Display {
 		}
 	};
 	
-	int[][] map = Map_Setup.generate2DArrayB(10, 10, 0.3);
+	int[][] map = Map_Setup2.generateMap(50, 50);
 	
 	
 	
@@ -54,9 +61,10 @@ public class Display {
 		frame.setLayout(new BorderLayout());
 		frame.add(panel, BorderLayout.CENTER);
 	
-		frame.setPreferredSize(new Dimension(500,500));
+		panel.setPreferredSize(new Dimension(520,520));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
+		frame.pack();
 	
 		
 	}

@@ -6,10 +6,10 @@ public class Map_Setup {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] a = generate1DArray(10, 0.7);
-		System.out.println(Arrays.toString(a));
+		//int[] a = generate1DArray(10, 0.7);
+		//System.out.println(Arrays.toString(a));
 		
-		int[][] b = generate2DArrayB(10,10,0.5);
+		int[][] b = randomWalkAlgorithm();
 		
 		for (int r = 0; r < b.length; r = r + 1) {
 			System.out.println(Arrays.toString(b[r]));
@@ -30,6 +30,66 @@ public class Map_Setup {
 		} while (result == seed);
 		
 		return result;
+	}
+	
+	/**
+	 * Build from tutorial:
+	 * https://www.freecodecamp.org/news/how-to-make-your-own-procedural-dungeon-map-generator-using-the-random-walk-algorithm-e0085c8aa9a/
+	 * 
+	 * @return
+	 */
+	public static int[][] randomWalkAlgorithm() {
+		
+		
+		int dimensions = 10;
+		int maxTunnel = 3;
+		int maxLength = 3;
+		int[][] directions = {{-1,0},{1,0},{0,1},{0,1}};
+		
+		int[] randomDirection = {0,0};
+		int[] lastDirection = {0,0};
+		
+		int randomLength = 0;
+		int tunnelLength = 0;
+		
+		int[][] a = new int[dimensions][dimensions];
+		
+		for (int r = 0; r < dimensions; r = r + 1) {
+			for (int c = 0; c < dimensions; c = c + 1) {
+				a[r][c] = 1;
+			}
+		}
+		
+		int currentRow = (int)(Math.floor(Math.random()*dimensions));
+
+		int currentColumn = (int)(Math.floor(Math.random()*dimensions));
+		
+		do {         
+			randomDirection = directions[(int)(Math.floor(Math.random()* directions.length))];      
+		} while ((randomDirection[0] == -lastDirection[0] && randomDirection[1] == -lastDirection[1]) || (randomDirection[0] == lastDirection[0] &&  randomDirection[1] == lastDirection[1]));
+		
+		randomLength = (int)(Math.ceil(Math.random() * maxLength));      
+				
+		while (tunnelLength < randomLength) { 
+			 if ( ( (currentRow == 0) && (randomDirection[0] == -1) )|| ( (currentColumn == 0) && (randomDirection[1] == -1) ) || ( (currentRow == dimensions - 1) && (randomDirection[0] == 1) ) || ( (currentColumn == dimensions - 1) && (randomDirection[1] == 1) ) ) { 
+				 break; 
+			 } //end if
+			 else{ 
+				  a[currentRow][currentColumn] = 0; 
+				  currentRow += randomDirection[0];
+				  currentColumn += randomDirection[1]; 
+				  tunnelLength++; 
+			} 
+			
+		} //end while
+		
+		if (tunnelLength < maxTunnel) { 
+			 lastDirection = randomDirection; 
+			 maxTunnel--; 
+		}
+		return a;
+
+		
 	}
 	public static int[][] generate2DArrayB(int rows, int cols, double repeat) {
 		
