@@ -52,6 +52,7 @@ public class Map_Setup2 {
     }
 
     public static int[][] generateMap(int width, int height){
+    	
         //start by defining our variables and setting their initial values
         int[][] map = new int[width][height];
 
