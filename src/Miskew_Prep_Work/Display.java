@@ -18,7 +18,7 @@ public class Display {
 
 	/*Data fields */
 	int[][] map = Map_Setup2.generateMap(50, 50);
-	Player player = new Player(10,10);
+	PlayerP player = new PlayerP(10,10);
 	
 	
 	/*Graphics and Listeners*/

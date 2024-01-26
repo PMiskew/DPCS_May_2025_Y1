@@ -15,6 +15,9 @@ public class Player {
 	private String name = "Paul";
 	private String role = "Bard"; //note this represet the characters class in DnD but I cannot use the word class since it is a reserved word. 
 	
+	
+	private int wood = 0;
+	
 	public Player() {
 	
 		xpos = 10;
@@ -46,5 +49,7 @@ public class Player {
 	public void setName(String name) { this.name = name; }
 	public String getRole() { return role; }
 	public void setRole(String role) {	this.role = role; }
+	public int getWood() { return wood;}
+	public void setWood(int wood) { this.wood = wood; }
 	
 }

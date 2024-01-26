@@ -1,9 +1,9 @@
-package Game_Class_Development;
+package Miskew_Prep_Work;
 
 public class Map {
 
-	private static final double LAND_PROB = 0.80;
-	private static final double WATER_PROB = .10;
+	private static final double LAND_PROB = 0.60;
+	private static final double WATER_PROB = 0.20;
 	private static final double FOREST_PROB = 1 - LAND_PROB - WATER_PROB;
 	
 	private int row;
@@ -40,6 +40,7 @@ public class Map {
 				}
 			}
 		}
+		map[2][3] = 3;
 	}
 	
 	/*This is a test method I have created to print map */
@@ -53,12 +54,13 @@ public class Map {
 		}
 	}
 	
-	public void setValue(int r, int c, int v) { map[r][c] = v;}
-	
-	public int[][] getMap() { return map; }
-	
+	public int[][] getMap() { return map;}
 	public static void main(String[] args) {
 		Map m = new Map(10,10);
+	}
+	
+	public void setMapValue(int r, int c, int v) {
+		map[r][c] = v;
 	}
 	
 	
