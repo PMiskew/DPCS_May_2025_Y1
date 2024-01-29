@@ -4,8 +4,8 @@ public class Player {
 
 	private final static int STEP = 10;
 	
-	private int rpos;
-	private int cpos;
+	private int xpos;
+	private int ypos;
 	
 	private int strenght = 10;
 	private int wisdom = 10;
@@ -15,10 +15,13 @@ public class Player {
 	private String name = "Paul";
 	private String role = "Bard"; //note this represet the characters class in DnD but I cannot use the word class since it is a reserved word. 
 	
+	
+	private int wood = 0;
+	
 	public Player() {
 	
-		rpos = 10;
-		cpos = 10;
+		xpos = 10;
+		ypos = 10;
 		
 	}
 	
@@ -30,10 +33,10 @@ public class Player {
 	//static.  Static fields and methods are shared with all instances.
 	//Static methods do not have access ot instance variables since no
 	//instance is needed to call it. 
-	public void setR(int r) { rpos = r; }
-	public void setC(int c) { cpos = c; }
-	public int getR() { return rpos; }
-	public int getC() { return cpos; }
+	public void setX(int x) { xpos = x; }
+	public void setY(int y) { ypos = y; }
+	public int getX() { return xpos; }
+	public int getY() { return ypos; }
 	public int getStrenght() { return strenght; }
 	public void setStrenght(int strenght) { this.strenght = strenght; }
 	public int getWisdom() { return wisdom; }
@@ -46,5 +49,7 @@ public class Player {
 	public void setName(String name) { this.name = name; }
 	public String getRole() { return role; }
 	public void setRole(String role) {	this.role = role; }
+	public int getWood() { return wood;}
+	public void setWood(int wood) { this.wood = wood; }
 	
 }

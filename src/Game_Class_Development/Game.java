@@ -81,7 +81,7 @@ public class Game {
 			
 			g.drawLine(10, 645, 112, 645);
 			
-			g.drawString("Wood: "+player.getWood(),12,670);
+			g.drawString("Wood: "+player.getWood(),12,660);
 				
 		}
 	};
