@@ -34,6 +34,27 @@ public class Map {
 		printMap();
 	}
 	
+	public void generateMap2() {
+		
+		for (int r = 0; r < map.length; r = r + 1) {
+			
+			for (int c = 0; c < map[r].length; c = c + 1) {
+				
+				double rand = Math.random();
+				
+				if (rand < LAND_PROB) {
+					map[r][c] = 0;
+				}
+				else if (rand < LAND_PROB + WATER_PROB) {
+					map[r][c] = 1;
+				}
+				else {
+					map[r][c] = 2;
+				}
+			}
+		}
+	}
+	
 	public void generateMap() {
 		
 		

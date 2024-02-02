@@ -241,6 +241,8 @@ public class Game {
 		frame.setVisible(true);
 		frame.pack();
 		
+		
+		
 	}
 	
 	public static void main(String[] args) {

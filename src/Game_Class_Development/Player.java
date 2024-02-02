@@ -18,6 +18,7 @@ public class Player {
 	
 	private int wood = 0;
 	
+	
 	public Player() {
 	
 		xpos = 10;
@@ -51,5 +52,7 @@ public class Player {
 	public void setRole(String role) {	this.role = role; }
 	public int getWood() { return wood;}
 	public void setWood(int wood) { this.wood = wood; }
+
+	
 	
 }

@@ -1,16 +1,26 @@
 package Miskew_Prep_Work;
 
 import java.awt.BorderLayout;
+import java.awt.Button;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.util.Scanner;
 
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class Game {
 
@@ -19,7 +29,14 @@ public class Game {
 	private Map map = new Map(50,50);
 	
 	private JFrame frame = new JFrame();
+	
+	JButton b1 = new JButton("Save Map");
+	JButton b2 = new JButton("Load Map");
+	JTextField textField = new JTextField();
+
+	private JPanel buttonPanel = new JPanel();
 	private JPanel panel = new JPanel() {
+	
 		
 		public void paint(Graphics g) {
 			
@@ -236,7 +253,7 @@ public class Game {
 			}
 			
 			
-			frame.repaint();
+			panel.repaint();
 			
 		}
 
@@ -267,22 +284,115 @@ public class Game {
 		
 	};
 	
+	public ActionListener action = new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			String text = ((JButton)(e.getSource())).getText();
+			
+			if (text.equals("Save Map")) {
+				saveMap();
+			}
+			if (text.equals("Load Map")) {
+				loadMap();
+			}
+			frame.requestFocus();
+		}
+	
+		
+		
+	};
 	
 	
 	public Game() {
 		
 
 		frame.setLayout(new BorderLayout());
-		frame.add(panel, BorderLayout.CENTER);
 		
+		
+		panel.setPreferredSize(new Dimension(520,720));
+	
+		
+		
+		
+		
+		
+		//adding listeners 
+		b1.addActionListener(action);
+		b2.addActionListener(action);
 		frame.addKeyListener(keyListener);	
 		panel.addMouseListener(mouseListener);
 		
-		panel.setPreferredSize(new Dimension(520,720));
+		//adding components to panels
+		buttonPanel.add(b1);
+		buttonPanel.add(b2);
+		
+		
+		
+
+
+		
+		//adding panels
+		frame.add(panel, BorderLayout.CENTER);
+		frame.add(buttonPanel,BorderLayout.EAST);
+		
+		
+		
+		b1.setFocusable(false);
+		b2.setFocusable(false);
+		buttonPanel.setFocusable(false);
+		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		frame.pack();
 		
+	}
+	
+	private void saveMap() {
+		
+		System.out.println("Save Map");
+		try {
+			File f = new File("map.txt");
+			PrintWriter pw = new PrintWriter(new FileWriter(f));
+			
+			for (int r = 0; r < map.getMap().length; r = r + 1) {
+				for (int c = 0; c < map.getMap()[r].length; c = c + 1) {
+					pw.print(map.getMap()[r][c]);				
+				}
+
+				pw.println();
+			}
+			
+			pw.close();		
+	
+		}
+		catch(Exception e) {
+			
+			
+		}
+	}
+	
+	public void loadMap() {
+		
+		System.out.println("Load Map");
+		
+		try {
+			File f = new File("map.txt");
+			Scanner s = new Scanner(f);
+			
+			for (int r = 0; r < 50; r = r + 1) {
+				String line = s.next(); //get line from file
+				for (int c = 0; c < 50; c = c + 1) {
+					int v = (Integer.parseInt(line.charAt(c)+""));
+					map.setValue(r, c,v);
+				}
+			}
+			panel.repaint();
+		}
+		catch (Exception e) {
+			
+		}
 	}
 	
 	public static void main(String[] args) {

@@ -21,7 +21,7 @@ public class Map {
 	}
 	
 	public void generateMap() {
-		
+	
 		
 		for (int r = 0; r < map.length; r = r + 1) {
 			
@@ -56,6 +56,8 @@ public class Map {
 	public void setValue(int r, int c, int v) { map[r][c] = v;}
 	
 	public int[][] getMap() { return map; }
+	
+	public static double get_LAND_PROB() { return LAND_PROB; }
 	
 	public static void main(String[] args) {
 		Map m = new Map(10,10);
