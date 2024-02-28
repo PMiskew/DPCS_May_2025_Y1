@@ -15,7 +15,8 @@ public class Swimmer {
 		
 		this.name = name;
 		this.event = event;
-		this.age = age;
+		setAge(age);
+			
 		
 	}
 	
@@ -50,7 +51,7 @@ public class Swimmer {
 	public void setAge(int a) { 
 		//The question could be something that states a restriction around age. 
 		//Here our design would stipulate that Swimmers must be greater than 9
-		if (a < 9) {
+		if (a > 9) {
 			age = a;
 		}
 		else { 
@@ -62,6 +63,10 @@ public class Swimmer {
 	
 	public double findAverage() {
 		
+		/*
+		 * An interesting test modification would be that times is 2D array where
+		 * each row are the times for a specific event. 
+		 */
 		double sum = 0; 
 		
 		for (int i = 0; i < times.size(); i = i + 1) {
@@ -81,10 +86,17 @@ public class Swimmer {
 		double sum = findAverage()*times.size();
 		
 		//If you don't have this you will get an error. 
-		if (times.size() == 0) {
+		if (times.size() < 3) {
 			return 0; 
 		}
 		
+		/*
+		 * Big idea when searching a list for something you know will exist:
+		 * 	Often students will set max and min to values that obviously don't make sense. 
+		 * 	In this case though you have to think about it.  By setting it to the first (or 
+		 *  any element) you don't need to know anything about the max and min in context
+		 *  of the values	
+		 */
 		double max = times.get(0);
 		double min = times.get(0);
 		
@@ -110,12 +122,15 @@ public class Swimmer {
 			this.times.add(times[i]);
 			
 		}
+		
+	
+		
 	}
 	
 
 	public static Swimmer findFaster(Swimmer s1, Swimmer s2) {
+	
 		
-
 		double s1Min = s1.times.get(0);
 		double s2Min = s2.times.get(0);
 		
@@ -183,6 +198,11 @@ public class Swimmer {
 		}
 		
 		return newSwimmer;
+		
+		
+		 
+		
+		
 	}
 	
 	//added this to check averages to proof my code
@@ -229,11 +249,46 @@ public class Swimmer {
 			System.out.println(swimmers[i].findAverage());
 		}
 		
+		
 		System.out.println(index);
+		
+		Swimmer.findFaster(s3, s2);
+		
+		
+		Swimmer s4 = new Swimmer("s4 name","free",10);
+		
+		Swimmer s5 = s4.copySwimmer();
+		
+		s5.setName("New name");
+		System.out.println(s4.getName());
+		
+		
 		
 		
 				
 	}
 	
-	
+	/*
+	 * What kind of methods will you ask us on the test?
+	 * 
+	 * 	In Part A:
+	 * 
+	 *  I want you to use Java, but these questions can lend themselves to pseudo code
+	 *  
+	 * 		- Loops through a 2D array in some way you need to know row major and column major
+	 * 		- Use loop structure to look at parts of the 2D array
+	 * 		- Check the question from when we started 2D arrays.
+	 * 		- ArrayList question 
+	 * 		- HL students recursive function 
+	 * 
+	 * In Part B:
+	 * 
+	 * I want this to be all Java - I am not being specifically picky about syntax in terms of little things
+	 * 
+	 * 		- The focus is on class structure and oranization but any question type from A can appear here. 
+	 * 		- In terms of the more challenging things I could do. 
+	 * 		 	- I could put a class in a class
+	 * 			- I could create a data structure of objects. 
+	 * 
+	 */
 }

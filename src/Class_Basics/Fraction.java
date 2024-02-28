@@ -1,6 +1,6 @@
 package Class_Basics;
 
-public class Fraction {
+public class Fraction extends Object{
 
 //************FIELDS************
 	int num;
