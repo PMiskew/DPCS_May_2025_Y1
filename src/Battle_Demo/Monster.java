@@ -6,15 +6,28 @@ public class Monster {
 	private String name;
 	
 	public Monster(int hp, String name) {
-		this.hp = hp;
-		this.name = name;
+		//What invisible line is right at the start of the constructor
+		super();
+		
+		setHP(hp);
+		setName(name);
 		
 	}
 	
 	public int getHP() { return hp; }
 	public String getName() { return name; }
 	
-	public void setHP(int hp) { this.hp = hp; }
+	public void setHP(int hp) { 
+		
+		if (hp < 10 || hp > 100) {
+			this.hp = 50;
+		}
+		else {
+			this.hp = hp;
+		}
+		
+	}
+		
 	public void setName (String name) { this.name = name; }
 	
 	/*

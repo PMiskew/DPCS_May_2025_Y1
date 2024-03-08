@@ -10,14 +10,17 @@ public class J4 {
 		
 		Scanner s = new Scanner(System.in);
 		
+		String a = "sssss";
+		String b = "";
+		
 		//String a = "forloops";
 		//String b = "fxrlxxp ";
 		
 		//String a = "forloops";
 		//String b = "frlpz";
 		
-		String a = "forloops";
-		String b = "fxlps";
+		//String a = "forloops";
+		//String b = "fxlps";
 		
 		String c = "";
 		int diff = a.length() - b.length();
@@ -53,7 +56,7 @@ public class J4 {
 		//letters now contains both the silly and the secret keys
 		letters.sort(null);
 		
-		//System.out.println(letters);
+		System.out.println(letters);
 		//System.out.println(diff);
 		
 		letters.sort(null);

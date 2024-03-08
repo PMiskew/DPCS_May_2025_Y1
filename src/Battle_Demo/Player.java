@@ -18,6 +18,10 @@ public class Player {
 		return (int)(Math.random()*10);
 	}
 	
+	public void doThis() {
+		attack();
+	}
+	
 	
 	
 	

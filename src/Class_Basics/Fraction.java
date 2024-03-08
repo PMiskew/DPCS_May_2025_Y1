@@ -1,17 +1,17 @@
 package Class_Basics;
 
-public class Fraction extends Object{
+public class Fraction {
 
 //************FIELDS************
-	int num;
-	int den;
+	private int num;
+	private int den;
 
 	
 //*************CONSTRUCTORS**********
 	public Fraction() {
 		
-		num = 1;
-		den = 1;
+		num = (int)(Math.random()*100);
+		den = (int)(Math.random()*100);
 		
 	}
 	
@@ -41,6 +41,11 @@ public class Fraction extends Object{
 	
 	
 //******************METHODS****************
+	
+	public void setNum(int num) {this.num = num;}
+	public void setDen(int den) {this.den = den;}
+	public int getNum() { return num;}
+	public int getDen() { return den;}
 	
 	public void reduce() {
 		
@@ -86,5 +91,14 @@ public class Fraction extends Object{
 			return true;
 		}
 		return false;
+	}
+	
+	public String toString() {
+		return num+"/"+den;
+	}
+	
+	public Fraction copyFraction() {
+		Fraction temp = new Fraction(this.num, this.den); //construct a whole new fraction
+		return temp;
 	}
 }

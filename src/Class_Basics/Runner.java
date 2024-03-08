@@ -9,11 +9,14 @@ public class Runner {
 		a.w();  //AW
 		a.callW(); //AW
 		a.callWAgain(); //CW
-		
+		a.callBW();
+		System.out.println("*******");
 		//GOOD: 
-		B ba = new A();
+		A ba = new A();
+		ba.w();
+		((A)ba).aonly();
 		
-		
+		//GOOD:
 		C a2 = new A();
 		((A)(a2)).aMethod();
 		
