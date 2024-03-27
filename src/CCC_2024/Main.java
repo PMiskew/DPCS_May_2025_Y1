@@ -1,4 +1,3 @@
-package CCC_2024;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -10,14 +9,17 @@ public class Main {
 		
 		Scanner s = new Scanner(System.in);
 		
+		String a = s.next();
+		String b = s.next();
+		
 		//String a = "forloops";
 		//String b = "fxrlxxp ";
 		
 		//String a = "forloops";
 		//String b = "frlpz";
-	
-		String a = s.next();
-		String b = s.next();
+		
+		//String a = "forloops";
+		//String b = "fxlps";
 		
 		String c = "";
 		int diff = a.length() - b.length();
@@ -31,7 +33,7 @@ public class Main {
 		char sillyR = '-';
 		
 		
-		//FIND SILLY
+		//FIND SILLY and SILENT
 		c = b;
 		
 		for (int i = 0; i < a.length(); i = i + 1) {
@@ -45,6 +47,7 @@ public class Main {
 			
 			c = cTemp;
 		}
+		//I have a list that contains the silient and silly keys
 		
 		if (c.length() > 0) {
 			sillyR = c.charAt(0);
@@ -53,12 +56,12 @@ public class Main {
 		//letters now contains both the silly and the secret keys
 		letters.sort(null);
 		
-		System.out.println(letters);
-		//System.out.println(diff);
+		//System.out.println(letters);
+	
 		
 		letters.sort(null);
 		
-		System.out.println(letters);
+		
 		
 		//5 cases 
 		// A) no secret, no silly 
@@ -75,7 +78,6 @@ public class Main {
 				if (letters.get(i) == letters.get(0)) {
 					count = count + 1;
 				}
-				
 			}
 			
 			
@@ -83,15 +85,18 @@ public class Main {
 		
 				secret = letters.get(0);
 				
-				if (letters.size() > 1) 
+				if (count < letters.size()) {
 					silly = letters.get(letters.size() - 1);
+				}
+				
 			}
 			else if(count != diff) {
 				
 				silly = letters.get(0);
 				
-				if (letters.size() > 1) 
-					secret = '-';
+				if (count < letters.size()) {
+					secret = letters.get(letters.size() - 1);
+				}
 				
 			}
 			
@@ -108,5 +113,79 @@ public class Main {
 		
 		
 	}
+	
+	
+	/*
+	 * Attempt 1
+	 ArrayList<Integer> check = new ArrayList<Integer>();
+		ArrayList<Integer> secretIndex = new ArrayList<Integer>();
+		char secretKey = '*';
+		String silly = "";
+		char sillyReplaced = ' ';
+		
+		
+		//find secret key
+		//if b length is smaller no secret key.
+		if (b.length() < a.length()) {
+			
+			for (int i = 0; i < a.length(); i = i + 1) {
+				
+				boolean found = false;
+				
+				for (int j = 0; j < b.length(); j = j + 1) {
+					
+					if (a.charAt(i) == b.charAt(j)) {
+						found = true;
+						
+						break;
+					}
+					
+				}
+				
+				if (found == false) {
+					secretIndex.add(i);
+					secretKey = a.charAt(i);
+				}
+				
+			}//end for
+			
+		}//end if
+	
+		//Find Silly Key
+		for (int i = 0; i < a.length(); i = i + 1) {
+			
+			if (!b.contains(""+a.charAt(i)) && a.charAt(i) != secretKey ) {
+				
+				silly = ""+a.charAt(i);
+				break;
+			
+			}
+				
+			
+			
+		}
+		
+		
+		
+		//Find replacement for silly key
+		
+		for (int i = 0; i < b.length(); i = i + 1) {
+			
+				if (!a.contains(""+b.charAt(i))) {
+				
+					sillyReplaced = b.charAt(i);
+					break;
+			
+			}
+		}
+			
+		
+		System.out.println(silly+" "+sillyReplaced);
+		System.out.println(secretKey);
+		
+	
+	 *
+	 *
+	 */
 
 }

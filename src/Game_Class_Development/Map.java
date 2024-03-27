@@ -1,7 +1,13 @@
 package Game_Class_Development;
 
+import java.util.Scanner;
+
+import java.io.File;
+
 public class Map {
 
+	
+	
 	private static final double LAND_PROB = 0.80;
 	private static final double WATER_PROB = .10;
 	private static final double FOREST_PROB = 1 - LAND_PROB - WATER_PROB;
@@ -9,17 +15,67 @@ public class Map {
 	private int row;
 	private int col;
 	
+	private String name;
 	private int[][] map;
 	
 	public Map(int r, int c) {
+		name = "none";
 		row = r;
 		col = c;
 		
 		map = new int[row][col]; //we need to construct the array structure before we can do anythign with it. 
 		generateMap();
-		printMap();
+		//printMap();
 	}
 	
+	public Map(String file, String n) {
+		
+		try {
+			Scanner fileReader = new Scanner(new File(file));
+			
+			row = Integer.parseInt(fileReader.nextLine());
+			col = Integer.parseInt(fileReader.nextLine());
+
+			map = new int[row][col]; //I kept forgetting this
+			//Interesting: modify loop structure to manage file. 
+			//Concern: Numbering system is going to get cumbersome. 
+			int r = 0;
+			
+			
+			while (fileReader.hasNext()) {
+			
+				String line = fileReader.nextLine();
+				System.out.println(line);
+				
+				for (int c = 0; c < col; c = c + 1) {
+						
+					map[r][c] = (Integer.parseInt(line.substring(c,c+1)));
+				
+				}
+				
+				r = r + 1;
+		
+			}
+			
+			System.out.println("TOWN CREATED");
+		}
+		catch(Exception e) {
+			System.out.println("NO TOWN");
+		}
+	
+	}
+	public Map(int r, int c, String n) {
+		
+		name = n;
+		
+		row = r;
+		col = c;
+		
+		map = new int[row][col]; //we need to construct the array structure before we can do anythign with it. 
+		generateMap();
+		//printMap();
+	
+	}
 	public void generateMap() {
 	
 		

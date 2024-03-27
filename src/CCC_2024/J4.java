@@ -10,8 +10,8 @@ public class J4 {
 		
 		Scanner s = new Scanner(System.in);
 		
-		String a = "sssss";
-		String b = "";
+		String a = s.next();
+		String b = s.next();
 		
 		//String a = "forloops";
 		//String b = "fxrlxxp ";
@@ -34,7 +34,7 @@ public class J4 {
 		char sillyR = '-';
 		
 		
-		//FIND SILLY
+		//FIND SILLY and SILENT
 		c = b;
 		
 		for (int i = 0; i < a.length(); i = i + 1) {
@@ -48,6 +48,7 @@ public class J4 {
 			
 			c = cTemp;
 		}
+		//I have a list that contains the silient and silly keys
 		
 		if (c.length() > 0) {
 			sillyR = c.charAt(0);
@@ -56,8 +57,8 @@ public class J4 {
 		//letters now contains both the silly and the secret keys
 		letters.sort(null);
 		
-		System.out.println(letters);
-		//System.out.println(diff);
+		//System.out.println(letters);
+	
 		
 		letters.sort(null);
 		
@@ -85,15 +86,18 @@ public class J4 {
 		
 				secret = letters.get(0);
 				
-				if (letters.size() > 1) 
+				if (count < letters.size()) {
 					silly = letters.get(letters.size() - 1);
+				}
+				
 			}
 			else if(count != diff) {
 				
 				silly = letters.get(0);
 				
-				if (letters.size() > 1) 
+				if (count < letters.size()) {
 					secret = letters.get(letters.size() - 1);
+				}
 				
 			}
 			

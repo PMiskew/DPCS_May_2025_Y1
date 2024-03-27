@@ -18,7 +18,10 @@ public class Game {
 	private Player player = new Player();
 	private Map map = new Map(50,50);
 	
-	private JFrame frame = new JFrame();
+	
+	private Map town = new Map("town.txt","t1");
+	
+	private JFrame frame = new JFrame(); //this holds everything
 	private JPanel panel = new JPanel() {
 		
 		public void paint(Graphics g) {
