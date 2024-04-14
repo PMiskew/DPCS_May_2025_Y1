@@ -10,6 +10,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class Game {
@@ -238,6 +239,13 @@ public class Game {
 		
 		frame.addKeyListener(keyListener);	
 		panel.addMouseListener(mouseListener);
+		
+		int result = JOptionPane.showConfirmDialog(null,"Do you like fish?");
+		System.out.println(result);
+		
+		
+		String name = JOptionPane.showInputDialog(null,"What is your name?");
+		player.setName(name);
 		
 		panel.setPreferredSize(new Dimension(520,720));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

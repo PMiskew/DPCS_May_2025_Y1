@@ -31,6 +31,7 @@ public class TestDialog {
         JTextField textField = new JTextField(10);
         panel.add(textField);
 
+        System.out.println(JOptionPane.YES_NO_CANCEL_OPTION)
         
         
         int result = JOptionPane.showOptionDialog(null, panel, "Enter a Number", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null, options1, null);
