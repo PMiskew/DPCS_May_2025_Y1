@@ -1,5 +1,7 @@
 package Basic_Concepts;
 
+import java.util.Scanner;
+
 public class ArrayTheory {
 
 	public static void main(String[] args) {
@@ -101,6 +103,46 @@ public class ArrayTheory {
 		System.out.println(s.length());
 		
 		
+		//when are conditional loops useful?
+		//Taking inputs and checking for errors - This is because someone could
+		//could keep typing in the wrong value
+		
+		Scanner input = new Scanner(System.in);
+		
+		//What is the logic error
+		int num = 11;
+		
+		//This has to be true the first time to enter the loop
+		while (num < 0 || num > 10) {
+			System.out.print("Input a number from 0 to 10 inclusive: ");
+			num = input.nextInt();
+			
+			//check condition
+			//	TRUE -- RUN LOOP AGAIN
+			//  FALSE -- MOVE ON
+		}
+		
+		//When is a do while loop useful?
+		//A do while loop will ALWAYS RUN ONCE
+		
+		//SCOPE:	This is where a variable is visible.  In a program we can determine
+		//the scope by finding the variable and identifying the first brace above the
+		//variable.  It is only within these braces that the variable exists. 
+		
+	
+		double height = 99;
+		
+		do {
+			
+			System.out.println("What is your height?");
+			System.out.print("Input a number greater than 0 and less than 300: ");
+			height = input.nextDouble();
+			
+		}while (height <= 0 || height > 300);
+		
+		
+		
+		System.out.println("END PROGRAM");
 		
 		
 		
