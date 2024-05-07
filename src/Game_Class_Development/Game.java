@@ -4,10 +4,13 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.Timer;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -18,6 +21,21 @@ public class Game {
 
 	private Player player = new Player();
 	private Map map = new Map(50,50);
+	
+	
+	private ActionListener event = new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			
+			System.out.println("GO!");
+		}
+		
+		
+	};
+	
+	private Timer gameTimer = new Timer();
 	
 	
 	private Map town = new Map("town.txt","t1");
@@ -233,7 +251,8 @@ public class Game {
 	
 	public Game() {
 		
-
+		
+		gameTimer = new Timer( );
 		frame.setLayout(new BorderLayout());
 		frame.add(panel, BorderLayout.CENTER);
 		
