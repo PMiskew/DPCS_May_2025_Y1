@@ -31,5 +31,11 @@ public class EnemyRunner {
 		}
 		
 	}
+	
+	public Enemy evolve(Enemy e)  {
+		
+		DarkKnight temp = new DarkKnight(e);
+		return temp;
+	}
 
 }

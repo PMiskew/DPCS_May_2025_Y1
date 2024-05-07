@@ -9,7 +9,10 @@ public class Enemy {
 	public Enemy() {
 		
 		
+		
 	}
+	
+	
 	
 	public void setSize(int s) { size = s; }
 	public void attack() { 
